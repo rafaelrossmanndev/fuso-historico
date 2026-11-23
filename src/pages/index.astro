@@ -1,0 +1,18 @@
+---
+import Base from "../layouts/Base.astro";
+import { videosVisiveis, dataBR } from "../lib";
+const videos = await videosVisiveis();
+---
+<Base>
+  <h1>Arquivo</h1>
+  <p>Cada vídeo do canal tem uma página aqui, com todas as fontes usadas na pesquisa: livros, artigos, documentos de época, mapas e imagens.</p>
+  {videos.length === 0 && <p class="aviso">Nenhum vídeo publicado ainda.</p>}
+  {videos.map((v) => (
+    <a class="cartao" href={`/videos/${v.id}/`}>
+      <span class="data">{dataBR(v.data.data)}</span>
+      {v.data.rascunho && <span class="rascunho">rascunho</span>}
+      <h2>{v.data.titulo}</h2>
+      <p>{v.data.descricao}</p>
+    </a>
+  ))}
+</Base>

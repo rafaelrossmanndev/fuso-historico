@@ -1,0 +1,52 @@
+/* Tema H do canal (sépia escura, giz creme). Mesmas cores do vídeo. */
+:root {
+  --lousa: #251E18;
+  --borda: #100C09;
+  --giz: #F3EADA;
+  --giz-apagado: rgba(243, 234, 218, 0.62);
+  --ocre: #F2CC7C;
+  --tijolo: #F08A6C;
+  --azul: #93CBD0;
+  --oliva: #BCC98C;
+  --lenda: #B8B2F2;
+  --titulo: "Fredericka the Great", serif;
+  --mao: "Kalam", cursive;
+  --texto: "IM Fell English", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--borda); }
+body {
+  margin: 0; color: var(--giz); font-family: var(--texto); font-size: 1.2rem; line-height: 1.6;
+  background: radial-gradient(ellipse at 45% 30%, var(--lousa) 0%, var(--lousa) 45%, var(--borda) 100%) fixed;
+  min-height: 100vh;
+}
+a { color: var(--ocre); text-underline-offset: 3px; }
+a:hover { color: var(--giz); }
+.miolo { max-width: 52rem; margin: 0 auto; padding: 0 1.25rem; }
+header.topo { padding: 1.5rem 0 1rem; border-bottom: 2px dashed rgba(243, 234, 218, 0.18); }
+header.topo .miolo { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+header.topo img { width: 64px; height: 64px; border-radius: 50%; }
+header.topo .nome { font-family: var(--titulo); font-size: 2rem; color: var(--giz); text-decoration: none; line-height: 1.1; }
+header.topo .frase { font-family: var(--mao); color: var(--giz-apagado); font-size: 1.05rem; display: block; }
+header.topo nav { margin-left: auto; font-family: var(--mao); display: flex; gap: 1.2rem; }
+header.topo nav a { color: var(--giz); text-decoration: none; }
+header.topo nav a:hover { color: var(--ocre); }
+main { padding: 2rem 0 3rem; }
+h1, h2, h3 { font-family: var(--titulo); font-weight: 400; line-height: 1.2; }
+h1 { font-size: 2.4rem; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.7rem; margin-top: 2.4rem; color: var(--ocre); }
+h3 { font-size: 1.3rem; margin-top: 1.6rem; }
+.data { font-family: var(--mao); color: var(--azul); font-size: 1.05rem; }
+.rascunho { font-family: var(--mao); color: var(--tijolo); border: 2px solid var(--tijolo); border-radius: 8px; padding: 0 0.5rem; font-size: 0.95rem; margin-left: 0.5rem; }
+.cartao { display: block; padding: 1.1rem 1.2rem; margin: 1rem 0; border: 2px solid rgba(243, 234, 218, 0.22); border-radius: 12px; text-decoration: none; color: var(--giz); background: rgba(243, 234, 218, 0.03); }
+.cartao:hover { border-color: var(--ocre); color: var(--giz); }
+.cartao h2 { margin: 0.2rem 0 0.3rem; color: var(--giz); font-size: 1.6rem; }
+.cartao p { margin: 0; color: var(--giz-apagado); }
+.video { position: relative; aspect-ratio: 16 / 9; margin: 1.5rem 0; border: 2px solid rgba(243, 234, 218, 0.22); border-radius: 12px; overflow: hidden; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.post ol, .post ul { padding-left: 1.4rem; }
+.post li { margin: 0.45rem 0; overflow-wrap: anywhere; }
+.post blockquote { margin: 1rem 0; padding: 0.4rem 1rem; border-left: 4px solid var(--lenda); color: var(--giz-apagado); }
+.post hr { border: 0; border-top: 2px dashed rgba(243, 234, 218, 0.18); margin: 2rem 0; }
+.aviso { font-family: var(--mao); color: var(--giz-apagado); font-size: 1rem; }
+footer.rodape { border-top: 2px dashed rgba(243, 234, 218, 0.18); padding: 1.5rem 0 2.5rem; font-size: 1rem; color: var(--giz-apagado); }

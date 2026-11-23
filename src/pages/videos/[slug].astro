@@ -1,0 +1,27 @@
+---
+import { render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { videosVisiveis, dataBR } from "../../lib";
+
+export async function getStaticPaths() {
+  const videos = await videosVisiveis();
+  return videos.map((v) => ({ params: { slug: v.id }, props: { v } }));
+}
+const { v } = Astro.props;
+const { Content } = await render(v);
+---
+<Base titulo={v.data.titulo} descricao={v.data.descricao}>
+  <article class="post">
+    <span class="data">{dataBR(v.data.data)}</span>
+    {v.data.rascunho && <span class="rascunho">rascunho</span>}
+    <h1>{v.data.titulo}</h1>
+    <p>{v.data.descricao}</p>
+    {v.data.youtube && (
+      <div class="video">
+        <iframe src={`https://www.youtube-nocookie.com/embed/${v.data.youtube}`} title={v.data.titulo} loading="lazy"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    )}
+    <Content />
+  </article>
+</Base>

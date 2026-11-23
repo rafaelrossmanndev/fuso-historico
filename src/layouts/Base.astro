@@ -1,0 +1,46 @@
+---
+import "@fontsource/fredericka-the-great";
+import "@fontsource/im-fell-english";
+import "@fontsource/im-fell-english/400-italic.css";
+import "@fontsource/kalam";
+import "../styles/global.css";
+
+interface Props { titulo?: string; descricao?: string }
+const { titulo, descricao = "Arquivo do canal Fuso Histórico: as fontes completas de cada vídeo." } = Astro.props;
+const tituloPagina = titulo ? `${titulo} | Fuso Histórico` : "Fuso Histórico";
+const canonico = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{tituloPagina}</title>
+    <meta name="description" content={descricao} />
+    <link rel="canonical" href={canonico} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="alternate" type="application/rss+xml" title="Fuso Histórico" href="/rss.xml" />
+    <meta property="og:title" content={tituloPagina} />
+    <meta property="og:description" content={descricao} />
+    <meta property="og:image" content={new URL("/logo.png", Astro.site)} />
+  </head>
+  <body>
+    <header class="topo">
+      <div class="miolo">
+        <img src="/logo.png" alt="" width="64" height="64" />
+        <div>
+          <a class="nome" href="/">Fuso Histórico</a>
+          <span class="frase">A história do mundo, de fuso em fuso.</span>
+        </div>
+        <nav><a href="/">Vídeos</a><a href="/sobre/">Sobre</a></nav>
+      </div>
+    </header>
+    <main class="miolo"><slot /></main>
+    <footer class="rodape">
+      <div class="miolo">
+        <p>Fuso Histórico: documentários de história desenhados a giz. As narrações dos vídeos usam voz gerada por IA.</p>
+      </div>
+    </footer>
+  </body>
+</html>
