@@ -3,6 +3,7 @@ titulo: "A Guerra do Contestado"
 descricao: "Entre 1912 e 1916, no planalto disputado por Paraná e Santa Catarina, caboclos que seguiam a memória de monges enfrentaram polícias, coronéis e o Exército. Uma guerra por terra, por fé, por uma ferrovia e por uma linha no mapa."
 data: 2026-11-29
 rascunho: false
+youtube: "YCpjZe2IH7w"
 ---
 
 Esta é a página de fontes do vídeo sobre a Guerra do Contestado. Aqui estão todas as obras citadas no vídeo e as outras que foram consultadas na pesquisa, com link quando há uma versão disponível na internet.
